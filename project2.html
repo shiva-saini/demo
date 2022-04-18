@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermometer Testing</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+       
+
+        span{
+            height: 50px;
+            width: 50px;
+        }
+      .inner{
+          display: flex;
+      }
+
+      #thr{
+          height: 100px;
+          width: 100px;
+          border: black 2px solid;
+      }
+
+      h1{
+        border : black 2px solid;
+      }
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner">
+            <h1>I Am Thermometer </h1>
+            <div id="thr"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const tempload = ()=>{
+        let temp = document.getElementById('thr');
+        temp.innerHTML = "&#xf2cb;";
+    }
+
+    tempload();
+</script>
+
+</html>

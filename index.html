@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Watch</title>
+    <style>
+        #btn{
+            border-radius: 10px;
+            border: black 2px solid;
+            background-color: yellow;
+
+        }
+        #box{
+            height: 100px;
+            width: 100px;
+            border: black 2px solid;
+        }
+
+        .main-div{
+            height: 200px;
+            width: 600px;
+        }
+        .a2{
+            margin: 2px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-div">
+        <div class="a1">
+            <label for="name">Enter Your Name ✍   </label>
+            <input type="text">
+
+        </div>
+
+        <div class="a2">
+
+            <label for="flav"> Enter your favourite icecream
+                <select name="iceCream" id="iceCream">
+                    <option value="">Chose any one .....</option>
+                    <option value="Chocolate"> Chocolate</option>
+                    <option value="Orange"> Orange</option>
+                    <option value="Malie">Malie</option>
+                    <option value="Vanilla">Vanilla</option>
+                </select>
+            </label>
+        </div>
+
+    </div>
+
+
+    <p id="para"> This is for demo of keyboard press events </p>
+    <input type="text" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
+    <p id="keys"> </p>
+
+
+    <div id="box">This is box</div>
+    <button onclick="goback()" id="btn">Go Back</button>
+    <h1>Current Time IS...</h1>
+    <div id="time"></div>
+
+    <h1>Current Date IS...</h1>
+    <div id="date"></div>
+    <p id="mypara" onmousedown="mouseDow()" onmouseup="mouseUp()">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non unde soluta corporis. Aspernatur molestias nobis similique fugiat at quibusdam sit quo nisi soluta quos fuga odio, beatae ipsa ipsum repellendus.</p>
+</body>
+
+<script>
+
+    // function keyPress(){
+    //     document.getElementById("keys").innerHTML = ` you press ${event.key} and it's code is ${event.code}`
+    // }
+
+    function keyDown(){
+        document.getElementById("keys").innerHTML = `Key is down`;
+    }
+
+    function keyUp(){
+        document.getElementById("keys").innerHTML = `Key is up`
+    }
+
+    let mEnter = document.getElementById("box");
+
+    mEnter.addEventListener("mouseenter",()=>{
+        mEnter.style.backgroundColor = "red";
+    });
+
+    mEnter.addEventListener("mouseleave",()=>{
+        mEnter.style.backgroundColor = 'green';
+    })
+
+    function mouseDow(){
+        document.getElementById("mypara").style.color = "red";
+    }
+
+    function mouseUp(){
+        document.getElementById("mypara").style.color = "blue";
+    }
+
+
+    alert(location.href);
+    if(confirm('want to visit the following url')){
+        location.href="https://www.youtube.com"
+
+    }
+
+    function goback(){
+        window.history.back();
+    }
+    let t = new Date().toLocaleTimeString();
+    document.getElementById("time").innerHTML = t;
+
+
+    let d = new Date().toLocaleDateString();
+    document.getElementById("date").innerHTML = d;
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light On and Off project</title>
+    <style>
+        h1 {
+            border: black 2px solid;
+            border-radius: 23px;
+            padding: 3px;
+        }
+
+        img {
+            height: 200px;
+            width: 200px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #onbtn {
+            position: relative;
+            left: -85px;
+            border: black 2px solid;
+            border-radius: 5px;
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        #offbtn {
+            position: relative;
+            left: 85px;
+            border: black 2px solid;
+            border-radius: 5px;
+            background-color: black;
+            color: whitesmoke;
+
+        }
+
+        .btn {
+            display: flex;
+        }
+
+        body {
+            background-color: rgb(217, 208, 226);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1>Can You Turn ON The Light?</h1>
+        <img src="/offbulb.png" alt="loading" id="bulb">
+        <div class="btn">
+
+            <button onclick="document.getElementById('bulb').src = '/onbulb.png' " id="onbtn">Turn On Bulb</button>
+            <button onclick="document.getElementById('bulb').src = '/offbulb.png' " id="offbtn">Turn Off Bulb</button>
+        </div>
+
+
+
+    </div>
+    <div class="bulb">
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<style>
+    body {
+        background-color: rgb(252, 252, 205);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        height: 160px;
+        width: 500px;
+        background-color: rgb(223, 143, 143);
+       
+        align-items: center;
+        justify-content: center;
+    }
+
+   
+
+   
+
+    input {
+        padding: 5px;
+        margin: 6px;
+        border-radius: 26px;
+        width: 100px;
+    }
+
+   
+
+   
+    
+</style>
+
+<body>
+
+    <div class="container">
+        <form action="" class="tempform" onsubmit="calcTemp(); return false">
+            <label for="conversion">Enter Temperature you would like to convert</label> <br/>
+            <input type="number" id="numtemp" name="numtem">
+
+            <select name="unittype" id="unittype">
+                <option value="cel">℃elcius</option>
+                <option value="fah">℉arenheight</option>
+            </select>
+            <br/>
+
+            <button type="submit" id="btn">submit</button>
+            <div id="innercontainer"></div>
+        </form>
+
+     
+    </div>
+
+</body>
+<script>
+    const calcTemp = ()=>{
+        const Numtemp = document.getElementById('numtemp').value;
+        console.log(Numtemp);
+
+        const unit = document.getElementById('unittype');
+        const unitval = unittype.options[unit.selectedIndex].value;
+        console.log(unitval);
+
+        const celtofeh = (cel)=>{
+            let res = Math.round((cel * 9/5) + 32);
+            return res;
+        }
+
+        const fehTocelcius = (feh)=>{
+            let res = Math.round((feh - 32) * 5/9);
+            return res;
+        }
+
+        let res;
+
+        if(unit == 'cel'){
+            res = celciusTofeh(Numtemp);
+            document.getElementById('innercontainer').innerHTML = `${res} ℉`
+        }else{
+            res = fehTocelcius(Numtemp);
+            document.getElementById('innercontainer').innerHTML = `${res} ℃`
+        }
+    }
+
+</script>
+
+</html>
